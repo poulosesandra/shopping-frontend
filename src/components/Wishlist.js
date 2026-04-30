@@ -35,9 +35,10 @@ function Wishlist() {
             key={item._id}
             className="card p-3 mb-3 d-flex flex-row"
           >
+            {/* Product Image - UPDATED */}
             <img
-              src={item.image}
-              alt=""
+              src={`https://shopping-backend-y6tm.onrender.com/uploads/${item.image}`}
+              alt={item.name}
               style={{
                 width: 100,
                 height: 100,

@@ -81,10 +81,10 @@ function Cart() {
                   />
                 </div>
 
-                {/* Product Image */}
+                {/* Product Image - UPDATED */}
                 <div className="col-auto">
                   <img
-                    src={item.image}
+                    src={`https://shopping-backend-y6tm.onrender.com/uploads/${item.image}`}
                     alt={item.name}
                     className="rounded shadow-sm"
                     style={{ width: "120px", height: "120px", objectFit: "contain" }}
@@ -96,7 +96,7 @@ function Cart() {
                   <h4 className="fw-bold mb-1">{item.name}</h4>
                   <p className="text-muted mb-2">Price: ₹{item.price}</p>
 
-                  {/* Quantity Controls - Matching Screenshot Style */}
+                  {/* Quantity Controls */}
                   <div className="d-flex align-items-center gap-3 mb-2">
                     <button 
                       className="btn btn-sm btn-danger d-flex align-items-center justify-content-center"
