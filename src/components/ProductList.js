@@ -208,7 +208,7 @@ function ProductList() {
               <div className="row g-4 align-items-center">
                 <div className="col-md-auto">
                   <div className="bg-white rounded-3 shadow-sm d-flex align-items-center justify-content-center overflow-hidden" style={{ width: "250px", height: "250px", border: "1px solid #f0f0f0", padding: "15px" }}>
-                    <img src={product.image} alt={product.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                    <img src={`https://shopping-backend-y6tm.onrender.com/uploads/${product.image}`} alt={product.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
                   </div>
                 </div>
 
