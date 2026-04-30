@@ -27,7 +27,7 @@ function Auth() {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:5000/api/auth/register", {
+      await axios.post("https://shopping-backend-y6tm.onrender.com/api/auth/register", {
         email,
         password,
       });
@@ -56,7 +56,7 @@ function Auth() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://shopping-backend-y6tm.onrender.com/api/auth/login",
         { email, password }
       );
 

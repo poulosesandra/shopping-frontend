@@ -26,8 +26,8 @@ function ProductList() {
   const fetchProducts = async () => {
     try {
       const url = selectedCategory === "All"
-        ? "http://localhost:5000/api/products"
-        : `http://localhost:5000/api/products?category=${selectedCategory}`;
+        ? "https://shopping-backend-y6tm.onrender.com/api/products"
+        : `https://shopping-backend-y6tm.onrender.com/api/products?category=${selectedCategory}`;
 
       const res = await axios.get(url);
       setProducts(res.data);

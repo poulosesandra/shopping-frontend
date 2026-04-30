@@ -10,7 +10,7 @@ function AdminOrders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/orders");
+      const res = await axios.get("https://shopping-backend-y6tm.onrender.com/api/orders");
       setOrders(res.data);
     } catch (err) {
       console.log(err);
@@ -20,7 +20,7 @@ function AdminOrders() {
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/orders/${id}/status`,
+        `https://shopping-backend-y6tm.onrender.com/api/orders/${id}/status`,
         { status }
       );
 
@@ -60,7 +60,7 @@ function AdminOrders() {
             {/* PAYMENT */}
             <p><b>Payment:</b> {order.paymentMethod}</p>
 
-            {/* STATUS SELECT (YOUR CODE) */}
+            {/* STATUS SELECT */}
             <select
               value={order.status}
               onChange={(e) =>

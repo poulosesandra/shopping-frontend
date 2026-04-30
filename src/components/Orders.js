@@ -13,34 +13,34 @@ function Orders() {
 
   const fetchOrders = async () => {
     const res = await axios.get(
-      `http://localhost:5000/api/orders/${user.email}`
+      `https://shopping-backend-y6tm.onrender.com/api/orders/${user.email}`
     );
     setOrders(res.data);
   };
 
   // ✅ CANCEL ORDER (BACKEND UPDATE)
- 
-const cancelOrder = async (orderId) => {
-  try {
-    await axios.put(
-      `http://localhost:5000/api/orders/cancel/${orderId}`
-    );
+  const cancelOrder = async (orderId) => {
+    try {
+      await axios.put(
+        `https://shopping-backend-y6tm.onrender.com/api/orders/cancel/${orderId}`
+      );
 
-    // ✅ instantly update UI
-    setOrders((prevOrders) =>
-      prevOrders.map((order) =>
-        order._id === orderId
-          ? { ...order, status: "Cancelled" }
-          : order
-      )
-    );
+      // ✅ instantly update UI
+      setOrders((prevOrders) =>
+        prevOrders.map((order) =>
+          order._id === orderId
+            ? { ...order, status: "Cancelled" }
+            : order
+        )
+      );
 
-    alert("Order Cancelled ❌");
-  } catch (error) {
-    console.error(error);
-    alert("Failed to cancel order");
-  }
-};
+      alert("Order Cancelled ❌");
+    } catch (error) {
+      console.error(error);
+      alert("Failed to cancel order");
+    }
+  };
+  
   return (
     <div className="container mt-4">
       <h2>📦 My Orders</h2>
