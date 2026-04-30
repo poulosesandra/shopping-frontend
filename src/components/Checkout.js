@@ -44,7 +44,9 @@ function Checkout() {
     };
 
     try {
-      await axios.post("http://localhost:5000/api/orders", orderData);
+      // UPDATED: Pointing to live Render backend instead of localhost
+      await axios.post("https://shopping-backend-y6tm.onrender.com/api/orders", orderData);
+      
       const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
       const updatedCart = savedCart.filter(
         (cartItem) => !cart.some((orderedItem) => orderedItem._id === cartItem._id)
@@ -71,23 +73,24 @@ function Checkout() {
           cart.map((item, i) => (
             <div key={i} className="d-flex align-items-center mb-3 pb-3 border-bottom last-child-border-0">
               
-              {/* === LARGE IMAGE CONTAINER (Updated) === */}
+              {/* === LARGE IMAGE CONTAINER === */}
               <div 
                 className="d-flex align-items-center justify-content-center overflow-hidden rounded bg-light"
                 style={{
-                  width: "120px",    // Increased from 70
-                  height: "120px",   // Increased from 70
+                  width: "120px",
+                  height: "120px",
                   border: "1px solid #eaeaea",
                   padding: "5px"
                 }}
               >
+                {/* UPDATED: Added live backend URL for images */}
                 <img
-                  src={item.image}
+                  src={`https://shopping-backend-y6tm.onrender.com/uploads/${item.image}`}
                   alt={item.name}
                   style={{
                     maxWidth: "250%",
                     maxHeight: "100%",
-                    objectFit: "contain" // Maintains aspect ratio, no stretching
+                    objectFit: "contain"
                   }}
                 />
               </div>
